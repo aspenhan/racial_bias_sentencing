@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}
+\linespread{1.25}
+
+% notes under tables (single spaced)
+\newcommand{\tabnote}[1]{\par\vspace{0.6ex}\begin{minipage}{\linewidth}\linespread{1}\footnotesize\textit{Notes:} #1\end{minipage}}
+\newcommand{\racesamplenote}{White and Black defendants: cases of judges with at least 50 cases of each race in the case's three-year window, counting the cases the instruments are built from (primary analysis: convicted cases with a matched score; secondary analysis: all cases).}
+
+\title{Data Notes\\[0.5ex]\large Judge Leniency, Non-Carceral Conviction and Recidivism by Race}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+These notes accompany the report \emph{Judge Leniency, Non-Carceral Conviction and Recidivism by Race: Judge-IV Results for Virginia Circuit Courts}. The report's judge-IV cases are felony cases from the Virginia circuit-court record, 2000--2019, restricted as in the judge-IV sample (model 17) of the Revolving Door paper (Humphries, Ouss, Stavreva, Stevenson and van Dijk 2025a). The primary analysis uses convicted cases with a matched sentencing score, the secondary analysis all cases. Both estimate effects for White and Black defendants on \emph{race samples}: the cases of judges with at least 50 cases of each race in the case's three-year window. The tables are written by \texttt{11\_data\_notes.R}.
+
+\section{Racial shares in the sample}\label{sec:racial_shares}
+
+White defendants are the majority in the full circuit-court record; Black defendants are the majority in every analysis sample. Race is measured the same way at every step (the defendant's modal race over all of their charges; for charges, the race recorded on the charge), so the shifts come only from which cases each step keeps. Table~\ref{tab:race_steps} follows race through each step, Table~\ref{tab:race_courts} shows it by court, and Table~\ref{tab:race_paper} repeats the steps in the Revolving Door replication data.
+
+\paragraph{Where the majority changes.} Steps that do not select courts barely move the shares. The full record covers every circuit court except Alexandria and Fairfax (as in the Revolving Door paper): 54.3\% of its charges and 54.6\% of its defendants are White, 43.3\% and 41.4\% Black. Restricting to cases with a felony charge (51.7\% White) and to judge-IV cases with dates, a weekday first disposition and an identified judge (50.8\%) leaves White defendants the majority, as among the cases first disposed by 2018 (50.4\% White, 47.7\% Black, in 80 courts).
+
+The majority flips with the two restrictions that select courts: the original sample's list of 19 courts, and the judge caseload rules (judges with at least 100 cases in the court in the case's three-year window, court-years with at least two such judges, courts with at least three such years), which drop courts without several judges hearing many felony cases. The final sample does not depend on the order of the two, because the caseload rules are computed within court, but how the shift divides between them does:
+\begin{itemize}
+  \item \emph{Court list first} (the order of the original code, which ours follows): the list raises the Black share from 47.7\% to 54.9\%; the caseload rules then drop 23,279 cases within the 19 courts, 56\% of them of White defendants, raising it to 55.9\%.
+  \item \emph{Caseload rules first} (the order the paper's Online Appendix B.3 describes): they keep 38 of the 80 courts and by themselves raise the Black share to 54.6\%; the list then drops 19 of these 38 courts, whose 25,896 cases are 59.0\% White and 39.3\% Black, leaving the same 284,805 cases (Table~\ref{tab:race_paper}). Of the 61 courts not on the list, 42 fail the caseload rules.
+\end{itemize}
+
+Within the 19 courts, the remaining steps move the shares by about a point. The primary analysis's restriction to convicted cases with a matched score leaves 41.6\% White: White defendants' cases are convicted slightly more often (83.4\% against 82.6\%), but Black defendants' convictions are matched to a score more often (50.0\% against 47.9\%). The race-sample rule keeps 70.9\% of each race's cases in the primary analysis, and 91.8\% of White and 96.6\% of Black defendants' cases in the secondary analysis, where it lowers the White share among White and Black defendants from 43.0\% to 41.8\%. It removes whole courts where Black defendants are rare: Scott County from the secondary race samples, and Scott, Tazewell and Wise Counties from the primary ones.
+
+\paragraph{Which courts are kept.} The court list comes from the Revolving Door paper. Its authors interviewed court clerks by phone in 2021 about how cases are assigned to judges and dropped courts where the assignment was clearly not quasi-random, such as assignment by judge specialization (Online Appendix B.3 and E.1.5); in the kept courts, cases are assigned at random or by scheduling or judge availability (Online Appendix D). They also drop Virginia Beach after 2010 for decreased data availability (in the replication code) and treat the four courts of circuit 5 as one, which the replication code attributes to the courts' guidance on how they operate.
+
+The courts that either restriction removes are mostly White. The 61 courts not on the list are smaller (2,171 cases on average, against 16,215 in the 19 courts), and 67.3\% of their cases are of White and 31.0\% of Black defendants; of the 25,896 cases that pass the caseload rules in 19 of them, 59.0\% and 39.3\%. The 19 courts include the large cities of Hampton Roads and Richmond, where most defendants are Black (Table~\ref{tab:race_courts}): Richmond (84.1\%), Norfolk (77.5\%), Portsmouth (76.5\%), Newport News (73.0\%) and the circuit-5 court (68.4\%), followed by Henrico, Chesapeake, Arlington and Roanoke City. These nine majority-Black courts hold 63.6\% of the analysis sample's cases: 76.9\% of the Black and 46.5\% of the White defendants' cases.
+
+\paragraph{Comparison with the Revolving Door paper.} The paper's replication package (Humphries et al.\ 2025b; our copy is identical to the published one, file for file) applies the same steps in the same order as our code (\texttt{make\_data\_\allowbreak judge\_\allowbreak iv\_\allowbreak clean.do}: cases first disposed by 2018, Virginia Beach by 2009, circuit 5 as one court, the 19 courts, then the caseload rules), and its data show the same composition at every step (Table~\ref{tab:race_paper}): 47.3\% Black among its cases with a judge in 80 courts, 54.8\% in the 19 courts and 55.8\% in its final sample, against 47.4\%, 54.9\% and 55.9\% in ours; caseload rules first, it also keeps 38 courts (54.5\% Black). Its Black indicator comes from the case's own charges, ours from the defendant's modal race. The paper's summary statistics (Table I, cases first disposed in 2000--2012) give Black shares of 0.57, 0.51 and 0.60 among dismissed, non-carceral and incarcerated cases, about 57\% overall; its data give 56.8\% for these 183,381 cases, and ours 56.9\% for our 188,146.
+
+The package reproduces the paper's final samples exactly: 277,065 cases, and the 183,381 first disposed by 2012. (Online Appendix B.3 says ``prior to 2012'', but the analysis code keeps cases first disposed in 2012, 15,915 of the 183,381.) It does not reproduce the intermediate counts of Online Appendix B.3, which reports that the caseload rules drop 18,777 of 465,541 cases with a judge (4\%) and the court list a further 121,931 (27\%), leaving 324,799. In the package's case file (465,287 cases with a judge), the caseload rules applied to all courts drop 127,216 of the 429,254 cases first disposed by 2018 (30\%) and 42 of the 80 courts, and 324,799 is close to the number of cases in the 19 courts over all years (325,324). The appendix's counts thus attribute most of the reduction to the court list, whereas in the package's data the caseload rules alone remove 42 of the 61 courts not on the list.
+
+\paragraph{Implications.} Only the restrictions on courts and judges' caseloads change the composition materially, so the difference between the full record and the analysis samples is one of geography: the estimates describe these 19 courts, in which the large cities weigh more than in the state's record. White and Black defendants also come from different courts within the samples, although the race-sample rule narrows the difference by removing courts where Black defendants are rare. In the primary race samples, the nine majority-Black courts hold 71.2\% of the Black and 52.0\% of the White defendants' cases, and Richmond, Norfolk, Portsmouth and Newport News 25.4\% and 10.5\%; in the secondary race samples, 76.9\% and 49.7\%, and 40.7\% and 15.3\%. Each race's estimates compare defendants of the same court and period (court $\times$ year fixed effects; judges sit in one court), but the White $-$ Black differences compare effects estimated in different mixes of courts as well as for defendants of different races.
+
+\begin{table}[H]
+\centering
+\caption{Race of the defendants at each step of the sample}\label{tab:race_steps}
+{\small\renewcommand{\arraystretch}{0.9}\resizebox{\textwidth}{!}{\input{tables/data_notes_race_steps.tex}}}
+\tabnote{Charges: all charges of the circuit-court record, 2000--2019, by the race recorded on the charge. Other rows: by the defendant's modal race over all of their charges in the record. Other: other races, unknown or not recorded. Courts: circuit-court jurisdictions, circuit 5 as one court. Cases: a defendant's charges with consecutive case numbers in a court, any charge class. Judge-IV cases: cases with a felony charge that is not a revocation proceeding, with first offense and disposition dates, first disposed on a weekday, in a court where at least 80\% of the pleadings record the judge, with a judge on their pleadings; first disposed by 2018 (Virginia Beach: by 2009); in the 19 courts of the original sample; of judges with at least 100 cases in the court in the case's three-year window, in court-years with at least two such judges and courts with at least three such years; with the instruments: the judge has another defendant's case in the window, and no unadjusted leave-out mean of the decisions equals 1. Analysis samples: the cases of the report's first stages and balance tests (all years). \racesamplenote{} Shares: of the row's total.}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Race of the defendants by court}\label{tab:race_courts}
+{\small\renewcommand{\arraystretch}{0.9}\resizebox{\textwidth}{!}{\input{tables/data_notes_race_courts.tex}}}
+\tabnote{Cases with the instruments (284,447), by court, in decreasing order of the Black share. Of the court: White and Black defendants' shares of the court's cases (the rest: other races and unknown). Of the race's cases: the court's share of all White and of all Black defendants' cases in the White and Black samples of the secondary and primary analyses; --: no case of the race in the sample. \racesamplenote{} Circuit 5 is one court in the data. Other courts: the courts of the judge-IV cases first disposed by 2018 that are not on the original sample's list (the step before the court list in Table~\ref{tab:race_steps}).}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Black share at each step: our data and the Revolving Door replication data}\label{tab:race_paper}
+{\small\renewcommand{\arraystretch}{0.9}\resizebox{\textwidth}{!}{\input{tables/data_notes_race_paper.tex}}}
+\tabnote{Cases, courts and Black share at the steps of the original sample, in our data (Black: the defendant's modal race) and in the Revolving Door paper's replication package (Black: from the case's own charges). Its data: \texttt{person\_level\_\allowbreak data\_\allowbreak casenumber\_\allowbreak part1only.dta}, its cases with a judge before the sample restrictions, prepared as in \texttt{make\_data\_\allowbreak judge\_\allowbreak iv\_\allowbreak clean.do}, and its final file \texttt{final\_judge\_\allowbreak iv\_\allowbreak data.dta} for the analysis sample. Steps as in Table~\ref{tab:race_steps}. Upper panel: the order of the replication code and of ours; lower panel: the caseload rules applied to all courts first, as in the paper's Online Appendix B.3. Both orders end with the same cases, because the caseload rules are computed within court.}
+\end{table}
+
+\section*{References}
+\begin{description}\setlength{\itemsep}{0pt}\small
+  \item Humphries, J.~E., A. Ouss, K. Stavreva, M.~T. Stevenson and W. van Dijk (2025a). ``Conviction, Incarceration, and Recidivism: Understanding the Revolving Door.'' \emph{Quarterly Journal of Economics} 140(4): 2907--2962. \url{https://doi.org/10.1093/qje/qjaf040}.
+  \item Humphries, J.~E., A. Ouss, K. Stavreva, M.~T. Stevenson and W. van Dijk (2025b). ``Replication Data for: `Conviction, Incarceration, and Recidivism: Understanding the Revolving Door'.'' Harvard Dataverse. \url{https://doi.org/10.7910/DVN/4EXGTC}.
+\end{description}
+
+\end{document}
