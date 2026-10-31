@@ -1,0 +1,19 @@
+.Rproj.user
+.Rhistory
+.RData
+.httr-oauth
+.DS_Store
+.quarto
+
+# Data
+data/
+
+# Logs
+logs/
+
+# Outputs
+figures/
+tables/
+
+# Papers for reference
+lit_review/
