@@ -25,9 +25,9 @@
 #   judge's mean (functions/ujive.R): suffix _ujive
 #
 # Run from anywhere inside the project (open racial_bias_sentencing.Rproj):
-#   source("code/R/00_master.R")
+#   source("code/00_master.R")
 # or from a terminal in the project root:
-#   Rscript code/R/00_master.R
+#   Rscript code/00_master.R
 #
 # Original data are read in place from orig_dir and never modified; the one
 # input kept in data/ is vcc_2026_active_retired.xlsx (Virginia Crime Codes,
@@ -72,14 +72,14 @@ invisible(Sys.setlocale("LC_TIME", "C"))     # English month names: CC dates are
 setFixest_estimation(fixef.tol = 1e-10, fixef.iter = 1e5)
 
 # ---- paths --------------------------------------------------------------------
-here::i_am("code/R/00_master.R")
+here::i_am("code/00_master.R")
 orig_dir  <- "C:/Users/xyh2/Yale University Dropbox/Aspen Han/Impacts of incarceration/data_new"
 # data of the Revolving Door paper's replication package (09, 11)
 paper_data_dir <- file.path(dirname(orig_dir), "administrative", "submission_07_14_25_sent",
                             "replication_code_and_data", "data")
 # Virginia county/city fips -> judicial circuit
 circuit_xwalk_path <- "C:/Users/xyh2/Yale University Dropbox/Aspen Han/Alternative credit scores/OR_AH_codebase/int_dat/crosswalk_circuit_county.dta"
-code_dir  <- here("code", "R")
+code_dir  <- here("code")
 data_dir  <- here("data")
 log_dir   <- here("logs")
 table_dir <- here("tables")
