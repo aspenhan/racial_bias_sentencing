@@ -1,0 +1,45 @@
+% OLS of any revocation of the person's other felony sentences set off after the case's first
+% disposition (sentences imposed after the day of the case's first disposition; earlier or
+% unidentified ones only after a new case) within 1, 2 and 3 years after the case's first disposition
+% on non-carceral conviction, controlling for dismissal (the coefficient compares non-carceral
+% conviction with incarceration), on the cases of the primary 2SLS. Rows: outcomes; columns:
+% White and Black defendants and White minus Black (from one regression with every regressor and
+% fixed effect interacted with a White indicator). Standard errors in parentheses; outcome mean in
+% brackets. Controls: any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping, any_larceny,
+% any_miscellaneous, any_murder, any_robbery, any_sex_assault, any_sex_offense, any_traffic,
+% any_weapon, any_mis, flag_prior_fel_conv, flag_prior_mis_only_conv, female (as fixed effects);
+% fixed effects: court x year, court x calendar month, court x day of week, guidelines offense group
+% x sentencing score (one indicator per cell). Standard errors clustered by defendant. Cases first
+% disposed in or before 2016. White and Black defendants: only the cases of judges with at least
+% 50 convicted cases with a matched score of White and 50 of Black defendants in the case's 3-year
+% window.
+\begin{tabular}{lccc}
+\toprule
+ & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{4}{l}{\textit{Proceeding}} \\
+\quad 1 year & $0.006^{***}$ & $0.003$ & $0.003$ \\
+ & (0.002) & (0.002) & (0.003) \\
+ & [0.018] & [0.012] &  \\
+\quad 2 years & $0.010^{***}$ & $0.005^{*}$ & $0.005$ \\
+ & (0.004) & (0.003) & (0.005) \\
+ & [0.057] & [0.038] &  \\
+\quad 3 years & $0.013^{***}$ & $0.004$ & $0.008$ \\
+ & (0.005) & (0.004) & (0.006) \\
+ & [0.096] & [0.071] &  \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Revoked}} \\
+\quad 1 year & $0.006^{***}$ & $0.003^{*}$ & $0.003$ \\
+ & (0.002) & (0.002) & (0.003) \\
+ & [0.016] & [0.010] &  \\
+\quad 2 years & $0.009^{***}$ & $0.005^{*}$ & $0.004$ \\
+ & (0.004) & (0.003) & (0.005) \\
+ & [0.052] & [0.034] &  \\
+\quad 3 years & $0.012^{***}$ & $0.004$ & $0.008$ \\
+ & (0.005) & (0.004) & (0.006) \\
+ & [0.089] & [0.064] &  \\
+\midrule
+Observations & 29,397 & 41,655 &  \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

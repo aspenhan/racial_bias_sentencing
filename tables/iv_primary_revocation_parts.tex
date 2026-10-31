@@ -1,0 +1,56 @@
+% Primary analysis. 2SLS of any felony revocation proceeding within 1 and 3 years on non-carceral
+% conviction, instrumented by conviction leniency and controlling for dismissal leniency (built within
+% the defendant's race), for the two revocation measures and their parts: other sentences = later
+% sentences (cases first disposed after the day of the focal disposition) + earlier or unidentified
+% (revocation-only case numbers) ones when the defendant has a new case between the focal disposition
+% and the filing (without revocation-only case numbers: later sentences + earlier ones after a new
+% case); focal sentences = filed under the focal case + under another case first disposed the same
+% day. Standard errors in parentheses, clustered by defendant. Controls: any_assault, any_burglary,
+% any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous, any_murder, any_robbery,
+% any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis, flag_prior_fel_conv,
+% flag_prior_mis_only_conv, female (as fixed effects); fixed effects: court x year, court x calendar
+% month, court x day of week, guidelines offense group x sentencing score (one indicator per cell).
+% White and Black defendants: only the cases of judges with at least 50 convicted cases with a matched
+% score of White and 50 of Black defendants in the case's 3-year window.
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{White} & \multicolumn{2}{c}{Black} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & 1 year & 3 years & 1 year & 3 years \\
+\midrule
+\multicolumn{5}{l}{\textit{Measured from the disposition (cases first disposed by 2016)}} \\
+Other sentences (primary measure) & $0.014$ & $0.198^{**}$ & $0.024$ & $0.029$ \\
+ & (0.039) & (0.089) & (0.035) & (0.081) \\
+\quad later sentences only & $0.043$ & $0.154^{**}$ & $0.014$ & $0.043$ \\
+ & (0.029) & (0.070) & (0.027) & (0.063) \\
+\quad earlier or unidentified sentences, after a new case, only & $-0.029$ & $0.063$ & $0.013$ & $-0.014$ \\
+ & (0.027) & (0.058) & (0.023) & (0.055) \\
+\quad without revocation-only case numbers & $0.023$ & $0.195^{**}$ & $0.024$ & $0.063$ \\
+ & (0.038) & (0.087) & (0.034) & (0.079) \\
+Focal sentences (secondary measure) & $0.330^{***}$ & $0.375^{***}$ & $0.416^{***}$ & $0.642^{***}$ \\
+ & (0.103) & (0.138) & (0.104) & (0.153) \\
+\quad focal case only & $0.337^{***}$ & $0.393^{***}$ & $0.406^{***}$ & $0.628^{***}$ \\
+ & (0.103) & (0.138) & (0.103) & (0.151) \\
+\quad other cases sentenced at the focal hearing only & $0.104^{**}$ & $0.135^{**}$ & $0.033$ & $0.090$ \\
+ & (0.045) & (0.065) & (0.034) & (0.062) \\
+Observations & 29,397 &  & 41,655 &  \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Measured from release, time served capped at 4 years (cases first disposed by 2012)}} \\
+Other sentences (primary measure) & $0.060$ & $0.119$ & $0.004$ & $0.042$ \\
+ & (0.061) & (0.128) & (0.049) & (0.102) \\
+\quad later sentences only & $0.052$ & $0.124$ & $-0.008$ & $0.075$ \\
+ & (0.045) & (0.104) & (0.035) & (0.080) \\
+\quad earlier or unidentified sentences, after a new case, only & $0.014$ & $0.064$ & $0.018$ & $0.029$ \\
+ & (0.045) & (0.087) & (0.035) & (0.072) \\
+\quad without revocation-only case numbers & $0.060$ & $0.145$ & $0.003$ & $0.065$ \\
+ & (0.057) & (0.124) & (0.048) & (0.098) \\
+Focal sentences (secondary measure) & $0.426^{***}$ & $0.377^{*}$ & $0.308^{**}$ & $0.727^{***}$ \\
+ & (0.163) & (0.198) & (0.133) & (0.186) \\
+\quad focal case only & $0.420^{***}$ & $0.384^{*}$ & $0.301^{**}$ & $0.717^{***}$ \\
+ & (0.162) & (0.197) & (0.133) & (0.184) \\
+\quad other cases sentenced at the focal hearing only & $0.164^{***}$ & $0.226^{**}$ & $0.075^{*}$ & $0.138^{**}$ \\
+ & (0.056) & (0.089) & (0.039) & (0.067) \\
+Observations & 19,594 &  & 29,024 &  \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

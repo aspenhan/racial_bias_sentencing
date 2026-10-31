@@ -1,0 +1,63 @@
+% Primary instruments. 2SLS of any new felony charge, any revocation proceeding on the person's other
+% sentences and on the focal sentences within 1, 2 and 3 years after release from the case's sentence
+% (the first disposition plus 90% of the active carceral time, at most 4 years; the first disposition
+% if not incarcerated) on non-carceral conviction, instrumented by the conviction instrument
+% (loo_d1_cond_jyr_rv_race), controlling for the dismissal instrument (loo_d0_jyr_race), built within
+% the defendant's race. Rows: outcomes; columns: White and Black defendants and White minus Black.
+% Standard errors in parentheses; outcome mean among the column's defendants in brackets. White minus
+% Black: from one regression of White and Black defendants with all controls, fixed effects, the
+% treatment and the instrument interacted with a White indicator. Controls: any_assault, any_burglary,
+% any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous, any_murder, any_robbery,
+% any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis, flag_prior_fel_conv,
+% flag_prior_mis_only_conv, female (as fixed effects); fixed effects: court x year, court x calendar
+% month, court x day of week, guidelines offense group x sentencing score (one indicator per cell).
+% Convicted cases with a matched score only. Standard errors clustered by defendant. All outcomes
+% on the same cases, first disposed in or before 2012 (full follow-up for every window in the
+% circuit-court record, which ends in 2019). White and Black defendants: only the cases of judges with
+% at least 50 convicted cases with a matched score of White and 50 of Black defendants in the case's
+% 3-year window. Columns: the White and Black samples restricted to the cases of judges with at least
+% the given number of convicted cases with a matched score of each race in the case's 3-year window
+% (none, 25, 100; the main analysis: 50).
+\begin{tabular}{lccccccccc}
+\toprule
+ & \multicolumn{3}{c}{No minimum} & \multicolumn{3}{c}{At least 25 cases} & \multicolumn{3}{c}{At least 100 cases} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+ & White & Black & White $-$ Black & White & Black & White $-$ Black & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{10}{l}{\textit{New felony case charged}} \\
+\quad 1 year & $-0.098$ & $0.010$ & $-0.108$ & $-0.068$ & $0.018$ & $-0.086$ & $0.082$ & $-0.059$ & $0.141$ \\
+ & (0.118) & (0.088) & (0.147) & (0.107) & (0.081) & (0.134) & (0.117) & (0.104) & (0.156) \\
+ & [0.103] & [0.111] &  & [0.103] & [0.110] &  & [0.111] & [0.117] &  \\
+\quad 2 years & $-0.188$ & $0.160$ & $-0.348^{*}$ & $-0.133$ & $0.168$ & $-0.301^{*}$ & $0.066$ & $-0.023$ & $0.089$ \\
+ & (0.151) & (0.116) & (0.190) & (0.135) & (0.108) & (0.173) & (0.144) & (0.133) & (0.196) \\
+ & [0.180] & [0.201] &  & [0.180] & [0.199] &  & [0.192] & [0.210] &  \\
+\quad 3 years & $-0.084$ & $0.144$ & $-0.228$ & $-0.082$ & $0.177$ & $-0.259$ & $0.136$ & $0.070$ & $0.066$ \\
+ & (0.166) & (0.128) & (0.210) & (0.149) & (0.120) & (0.191) & (0.158) & (0.147) & (0.215) \\
+ & [0.241] & [0.271] &  & [0.241] & [0.270] &  & [0.254] & [0.281] &  \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Revocation proceeding, other sentences}} \\
+\quad 1 year & $-0.037$ & $0.027$ & $-0.064$ & $-0.033$ & $0.021$ & $-0.054$ & $0.083$ & $-0.016$ & $0.099$ \\
+ & (0.063) & (0.044) & (0.077) & (0.056) & (0.040) & (0.069) & (0.056) & (0.048) & (0.074) \\
+ & [0.026] & [0.023] &  & [0.026] & [0.023] &  & [0.025] & [0.024] &  \\
+\quad 2 years & $0.014$ & $0.010$ & $0.004$ & $0.021$ & $0.011$ & $0.009$ & $0.127$ & $-0.105$ & $0.232^{*}$ \\
+ & (0.100) & (0.068) & (0.121) & (0.090) & (0.062) & (0.109) & (0.095) & (0.078) & (0.123) \\
+ & [0.070] & [0.061] &  & [0.070] & [0.059] &  & [0.072] & [0.062] &  \\
+\quad 3 years & $-0.023$ & $0.064$ & $-0.087$ & $-0.003$ & $0.062$ & $-0.065$ & $0.083$ & $-0.073$ & $0.155$ \\
+ & (0.122) & (0.088) & (0.150) & (0.109) & (0.081) & (0.136) & (0.114) & (0.100) & (0.152) \\
+ & [0.112] & [0.101] &  & [0.111] & [0.099] &  & [0.114] & [0.104] &  \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Revocation proceeding, focal sentences}} \\
+\quad 1 year & $0.227$ & $0.096$ & $0.131$ & $0.218^{*}$ & $0.114$ & $0.103$ & $0.288^{**}$ & $0.372^{***}$ & $-0.083$ \\
+ & (0.146) & (0.102) & (0.178) & (0.129) & (0.095) & (0.160) & (0.137) & (0.134) & (0.192) \\
+ & [0.161] & [0.169] &  & [0.160] & [0.166] &  & [0.173] & [0.168] &  \\
+\quad 2 years & $0.223$ & $0.296^{**}$ & $-0.073$ & $0.156$ & $0.352^{***}$ & $-0.196$ & $0.285^{*}$ & $0.431^{***}$ & $-0.146$ \\
+ & (0.175) & (0.129) & (0.217) & (0.154) & (0.121) & (0.196) & (0.163) & (0.159) & (0.228) \\
+ & [0.277] & [0.285] &  & [0.273] & [0.281] &  & [0.289] & [0.283] &  \\
+\quad 3 years & $0.206$ & $0.517^{***}$ & $-0.310$ & $0.123$ & $0.550^{***}$ & $-0.427^{**}$ & $0.222$ & $0.494^{***}$ & $-0.272$ \\
+ & (0.185) & (0.143) & (0.233) & (0.163) & (0.134) & (0.211) & (0.170) & (0.168) & (0.239) \\
+ & [0.341] & [0.351] &  & [0.334] & [0.347] &  & [0.351] & [0.348] &  \\
+\midrule
+Observations & 27,829 & 42,355 &  & 24,205 & 39,639 &  & 13,187 & 16,625 &  \\
+\bottomrule
+\multicolumn{10}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

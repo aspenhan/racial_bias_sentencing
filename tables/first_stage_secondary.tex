@@ -1,0 +1,36 @@
+% Secondary instruments. First stages: non-carceral conviction regressed on the conviction
+% instrument (loo_d1_jyr), without and with the dismissal instrument (loo_d0_jyr). Controls:
+% any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous,
+% any_murder, any_robbery, any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis,
+% flag_prior_fel_conv, flag_prior_mis_only_conv, female (as fixed effects); fixed effects: court
+% x year, court x calendar month, court x day of week. Columns 'Predicted score': the instruments
+% (loo_d1_jyr_pred, loo_d0_jyr_pred; by race loo_d1_jyr_pred_race, loo_d0_jyr_pred_race) built, and
+% the regressions estimated, also with one indicator per rounded value of the predicted sentencing
+% score (05). Standard errors clustered by defendant. F-statistic: Wald test of the conviction
+% instrument. The instruments built within the defendant's race (loo_d1_jyr_race, loo_d0_jyr_race).
+% All defendants: White and Black defendants together, each with their race's instruments (one
+% coefficient each) and every control and fixed effect specific to each race, so that the coefficient
+% on conviction leniency is a weighted average of the White and Black ones (Arnold, Dobbie and Yang
+% 2018). White and Black defendants: only the cases of judges with at least 50 cases of White and 50
+% of Black defendants in the case's 3-year window.
+\begin{tabular}{lcccccccccccc}
+\toprule
+ & \multicolumn{4}{c}{All} & \multicolumn{4}{c}{White} & \multicolumn{4}{c}{Black} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}
+ & \multicolumn{2}{c}{No score} & \multicolumn{2}{c}{Predicted score} & \multicolumn{2}{c}{No score} & \multicolumn{2}{c}{Predicted score} & \multicolumn{2}{c}{No score} & \multicolumn{2}{c}{Predicted score} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}\cmidrule(lr){12-13}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) & (12) \\
+\midrule
+Conviction leniency & $0.460^{***}$ & $0.474^{***}$ & $0.474^{***}$ & $0.491^{***}$ & $0.455^{***}$ & $0.477^{***}$ & $0.465^{***}$ & $0.490^{***}$ & $0.465^{***}$ & $0.471^{***}$ & $0.485^{***}$ & $0.492^{***}$ \\
+ & (0.026) & (0.027) & (0.026) & (0.027) & (0.037) & (0.038) & (0.036) & (0.038) & (0.036) & (0.038) & (0.036) & (0.037) \\
+Dismissal leniency &  & $0.070^{**}$ &  & $0.081^{**}$ &  & $0.114^{**}$ &  & $0.132^{**}$ &  & $0.030$ &  & $0.035$ \\
+ &  & (0.035) &  & (0.036) &  & (0.053) &  & (0.054) &  & (0.048) &  & (0.047) \\
+\midrule
+F-statistic, conviction leniency & 315.4 & 308.6 & 344.9 & 337.6 & 152.9 & 154.1 & 163.5 & 166.2 & 163.8 & 155.7 & 183.8 & 173.5 \\
+Mean of dependent variable & 0.278 & 0.278 & 0.278 & 0.278 & 0.314 & 0.314 & 0.314 & 0.314 & 0.252 & 0.252 & 0.252 & 0.252 \\
+Observations & 263,685 & 263,685 & 263,685 & 263,685 & 110,131 & 110,131 & 110,131 & 110,131 & 153,554 & 153,554 & 153,554 & 153,554 \\
+Dismissal leniency control & No & Yes & No & Yes & No & Yes & No & Yes & No & Yes & No & Yes \\
+Predicted-score control & No & No & Yes & Yes & No & No & Yes & Yes & No & No & Yes & Yes \\
+\bottomrule
+\multicolumn{13}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

@@ -1,0 +1,27 @@
+% Felony revocation proceedings of White (columns 1-2) and Black (columns 3-4) defendants filed
+% 2000-2019 before a judge of the analysis in a year in which the judge also sentences analysis cases
+% of the defendant's race. Dependent variable: not revoked (no charge of the proceeding ends with
+% the sentence revoked or the violation found). Regressors: the leniency of the judge deciding the
+% proceeding (not of the judge who imposed the revoked sentence) toward the defendant's race, measured
+% by their sentencing decisions: their mean race-specific instrument of the primary analysis in the
+% year over the analysis cases of that race they sentence (conviction leniency: over convicted cases
+% with a matched score; dismissal leniency: over all cases). Court x year fixed effects; standard
+% errors, in parentheses, clustered by judge.
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{White defendants} & \multicolumn{2}{c}{Black defendants} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & (1) & (2) & (3) & (4) \\
+\midrule
+Deciding judge's conviction leniency & $0.043$ & $0.042$ & $0.049$ & $0.055$ \\
+ & (0.035) & (0.033) & (0.051) & (0.050) \\
+Deciding judge's dismissal leniency &  & $0.131$ &  & $0.266^{***}$ \\
+ &  & (0.082) &  & (0.071) \\
+\midrule
+SD of conviction leniency within court $\times$ year & 0.051 & 0.051 & 0.041 & 0.041 \\
+Mean of not revoked & 0.142 & 0.142 & 0.134 & 0.134 \\
+Proceedings & 45,635 & 45,635 & 73,742 & 73,742 \\
+Judges & 177 & 177 & 179 & 179 \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

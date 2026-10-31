@@ -1,0 +1,52 @@
+% Primary instruments. 2SLS of any revocation of the felony sentences imposed at the focal hearing
+% (filed under the case, if convicted, or under another case of the person first disposed the
+% same day) within 1, 2 and 3 years after the case's first disposition on non-carceral conviction,
+% instrumented by the conviction instrument (loo_d1_cond_jyr_rv_race), controlling for the dismissal
+% instrument (loo_d0_jyr_race), built within the defendant's race. Rows: outcomes; columns: White
+% and Black defendants and White minus Black. Standard errors in parentheses; outcome mean among
+% the column's defendants in brackets. White minus Black: from one regression of White and Black
+% defendants with all controls, fixed effects, the treatment and the instrument interacted with
+% a White indicator. Controls: any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping,
+% any_larceny, any_miscellaneous, any_murder, any_robbery, any_sex_assault, any_sex_offense,
+% any_traffic, any_weapon, any_mis, flag_prior_fel_conv, flag_prior_mis_only_conv, female; fixed
+% effects: court x year, court x calendar month, court x day of week, sentencing score (one indicator
+% per value). Convicted cases with a matched score only. Standard errors clustered by defendant. All
+% outcomes on the same cases, first disposed in or before 2016 (full follow-up for every window in the
+% circuit-court record, which ends in 2019). White and Black defendants: only the cases of judges with
+% at least 50 convicted cases with a matched score of White and 50 of Black defendants in the case's
+% 3-year window. Columns: the primary analysis with UJIVE instruments (loo_d1_cond_jyr_rv_race_ujive,
+% loo_d0_jyr_race_ujive: residualized on the controls and fixed effects, the defendant left out of the
+% residualization), and with one fixed effect per most serious offense type x sentencing score cell
+% instead of the score fixed effects (JIVE instruments).
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{UJIVE} & \multicolumn{3}{c}{Offense x score cells} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & White & Black & White $-$ Black & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{7}{l}{\textit{Proceeding}} \\
+\quad 1 year & $0.250^{***}$ & $0.322^{***}$ & $-0.071$ & $0.239^{**}$ & $0.418^{***}$ & $-0.178$ \\
+ & (0.079) & (0.081) & (0.113) & (0.107) & (0.119) & (0.160) \\
+ & [0.133] & [0.114] &  & [0.133] & [0.114] &  \\
+\quad 2 years & $0.284^{***}$ & $0.428^{***}$ & $-0.144$ & $0.227^{*}$ & $0.665^{***}$ & $-0.438^{**}$ \\
+ & (0.099) & (0.107) & (0.146) & (0.132) & (0.163) & (0.210) \\
+ & [0.254] & [0.227] &  & [0.254] & [0.227] &  \\
+\quad 3 years & $0.293^{***}$ & $0.490^{***}$ & $-0.197$ & $0.213$ & $0.733^{***}$ & $-0.520^{**}$ \\
+ & (0.107) & (0.118) & (0.159) & (0.141) & (0.179) & (0.228) \\
+ & [0.324] & [0.304] &  & [0.324] & [0.304] &  \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Revoked}} \\
+\quad 1 year & $0.246^{***}$ & $0.306^{***}$ & $-0.060$ & $0.235^{**}$ & $0.399^{***}$ & $-0.164$ \\
+ & (0.076) & (0.077) & (0.108) & (0.102) & (0.114) & (0.153) \\
+ & [0.116] & [0.101] &  & [0.116] & [0.101] &  \\
+\quad 2 years & $0.296^{***}$ & $0.433^{***}$ & $-0.138$ & $0.215^{*}$ & $0.693^{***}$ & $-0.477^{**}$ \\
+ & (0.097) & (0.105) & (0.142) & (0.128) & (0.162) & (0.207) \\
+ & [0.227] & [0.203] &  & [0.227] & [0.203] &  \\
+\quad 3 years & $0.282^{***}$ & $0.503^{***}$ & $-0.221$ & $0.174$ & $0.774^{***}$ & $-0.600^{***}$ \\
+ & (0.105) & (0.117) & (0.157) & (0.138) & (0.179) & (0.226) \\
+ & [0.291] & [0.271] &  & [0.291] & [0.271] &  \\
+\midrule
+Observations & 29,391 & 41,657 &  & 29,391 & 41,657 &  \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

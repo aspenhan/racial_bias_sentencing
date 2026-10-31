@@ -1,0 +1,38 @@
+% Primary instruments. Split-sample monotonicity: for each split, the conviction instrument is
+% built from one group only and the first stage of non-carceral conviction on it is estimated on
+% the other group, controlling for the dismissal instrument built from the same group; coefficient
+% on the conviction instrument and (standard error). Controls and fixed effects as in the first
+% stages, without the controls constant within the group; standard errors clustered by defendant.
+% The conviction instrument is built from the convicted cases with a matched score of the defendant's
+% race (as in the analysis), restricted to the group; the dismissal instrument from all cases of the
+% race. All defendants (White and Black): the race split builds the instruments from one race's cases
+% and estimates the first stage on the other race; the other splits build each race's instruments
+% from that race's cases of the group and estimate the first stage on both races, every control and
+% fixed effect specific to each race and one coefficient on each instrument, so the coefficient is a
+% weighted average of the White and Black ones. White and Black defendants: only the cases of judges
+% with at least 50 convicted cases with a matched score of White and 50 of Black defendants in the
+% case's 3-year window.
+\begin{tabular}{lccc}
+\toprule
+Instrument built from $\rightarrow$ first stage on & All & White & Black \\
+\midrule
+\multicolumn{4}{l}{\textit{Race}} \\
+White $\rightarrow$ Black & $0.505^{***}$ &  &  \\
+ & (0.037) &  &  \\
+Black $\rightarrow$ White & $0.783^{***}$ &  &  \\
+ & (0.057) &  &  \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Sex}} \\
+Male $\rightarrow$ Female & $0.598^{***}$ & $0.551^{***}$ & $0.682^{***}$ \\
+ & (0.078) & (0.098) & (0.128) \\
+Female $\rightarrow$ Male & $0.198^{***}$ & $0.213^{***}$ & $0.188^{***}$ \\
+ & (0.021) & (0.035) & (0.027) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Prior felony conviction (5 years)}} \\
+No prior felony $\rightarrow$ Prior felony & $0.504^{***}$ & $0.555^{***}$ & $0.457^{***}$ \\
+ & (0.054) & (0.083) & (0.069) \\
+Prior felony $\rightarrow$ No prior felony & $0.302^{***}$ & $0.280^{***}$ & $0.338^{***}$ \\
+ & (0.030) & (0.038) & (0.047) \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

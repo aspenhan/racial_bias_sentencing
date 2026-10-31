@@ -1,0 +1,49 @@
+% Primary instruments. 2SLS of any revocation of the focal felony sentences, those imposed at the
+% focal hearing (filed under the case, if convicted, or under another case of the person first
+% disposed the same day) within 1, 2 and 3 years after release from the case's sentence (the
+% first disposition plus 90% of the active carceral time, at most 4 years; the first disposition
+% if not incarcerated) on non-carceral conviction, instrumented by the conviction instrument
+% (loo_d1_cond_jyr_rv_race), controlling for the dismissal instrument (loo_d0_jyr_race), built within
+% the defendant's race. Rows: outcomes; columns: White and Black defendants and White minus Black.
+% Standard errors in parentheses; outcome mean among the column's defendants in brackets. White minus
+% Black: from one regression of White and Black defendants with all controls, fixed effects, the
+% treatment and the instrument interacted with a White indicator. Controls: any_assault, any_burglary,
+% any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous, any_murder, any_robbery,
+% any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis, flag_prior_fel_conv,
+% flag_prior_mis_only_conv, female (as fixed effects); fixed effects: court x year, court x calendar
+% month, court x day of week, guidelines offense group x sentencing score (one indicator per cell).
+% Convicted cases with a matched score only. Standard errors clustered by defendant. All outcomes
+% on the same cases, first disposed in or before 2012 (full follow-up for every window in the
+% circuit-court record, which ends in 2019). White and Black defendants: only the cases of judges with
+% at least 50 convicted cases with a matched score of White and 50 of Black defendants in the case's
+% 3-year window.
+\begin{tabular}{lccc}
+\toprule
+ & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{4}{l}{\textit{Proceeding}} \\
+\quad 1 year & $0.426^{***}$ & $0.308^{**}$ & $0.118$ \\
+ & (0.163) & (0.133) & (0.210) \\
+ & [0.164] & [0.167] &  \\
+\quad 2 years & $0.403^{**}$ & $0.552^{***}$ & $-0.150$ \\
+ & (0.189) & (0.168) & (0.253) \\
+ & [0.279] & [0.281] &  \\
+\quad 3 years & $0.377^{*}$ & $0.727^{***}$ & $-0.350$ \\
+ & (0.198) & (0.186) & (0.271) \\
+ & [0.339] & [0.346] &  \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Revoked}} \\
+\quad 1 year & $0.465^{***}$ & $0.252^{**}$ & $0.213$ \\
+ & (0.161) & (0.127) & (0.205) \\
+ & [0.146] & [0.150] &  \\
+\quad 2 years & $0.395^{**}$ & $0.511^{***}$ & $-0.116$ \\
+ & (0.185) & (0.164) & (0.247) \\
+ & [0.252] & [0.254] &  \\
+\quad 3 years & $0.395^{**}$ & $0.702^{***}$ & $-0.307$ \\
+ & (0.196) & (0.182) & (0.267) \\
+ & [0.308] & [0.313] &  \\
+\midrule
+Observations & 19,594 & 29,024 &  \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

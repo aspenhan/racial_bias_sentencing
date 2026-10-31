@@ -1,0 +1,43 @@
+% OLS of any revocation of the focal felony sentences, those imposed at the focal hearing (filed under
+% the case, if convicted, or under another case of the person first disposed the same day) within
+% 1, 2 and 3 years after the case's first disposition on non-carceral conviction, controlling for
+% dismissal (the coefficient compares non-carceral conviction with incarceration), on the cases of
+% the secondary 2SLS. Rows: outcomes; columns: White and Black defendants and White minus Black (from
+% one regression with every regressor and fixed effect interacted with a White indicator). Standard
+% errors in parentheses; outcome mean in brackets. Controls: any_assault, any_burglary, any_drugs,
+% any_fraud, any_kidnapping, any_larceny, any_miscellaneous, any_murder, any_robbery, any_sex_assault,
+% any_sex_offense, any_traffic, any_weapon, any_mis, flag_prior_fel_conv, flag_prior_mis_only_conv,
+% female (as fixed effects); fixed effects: court x year, court x calendar month, court x day of week.
+% Standard errors clustered by defendant. Cases first disposed in or before 2016. White and Black
+% defendants: only the cases of judges with at least 50 cases of White and 50 of Black defendants in
+% the case's 3-year window.
+\begin{tabular}{lccc}
+\toprule
+ & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{4}{l}{\textit{Proceeding}} \\
+\quad 1 year & $0.038^{***}$ & $0.068^{***}$ & $-0.030^{***}$ \\
+ & (0.002) & (0.002) & (0.003) \\
+ & [0.088] & [0.086] &  \\
+\quad 2 years & $0.027^{***}$ & $0.073^{***}$ & $-0.046^{***}$ \\
+ & (0.003) & (0.003) & (0.004) \\
+ & [0.166] & [0.163] &  \\
+\quad 3 years & $0.007^{**}$ & $0.061^{***}$ & $-0.054^{***}$ \\
+ & (0.003) & (0.003) & (0.005) \\
+ & [0.213] & [0.217] &  \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Revoked}} \\
+\quad 1 year & $0.033^{***}$ & $0.058^{***}$ & $-0.025^{***}$ \\
+ & (0.002) & (0.002) & (0.003) \\
+ & [0.074] & [0.074] &  \\
+\quad 2 years & $0.023^{***}$ & $0.061^{***}$ & $-0.037^{***}$ \\
+ & (0.003) & (0.003) & (0.004) \\
+ & [0.144] & [0.143] &  \\
+\quad 3 years & $0.006^{*}$ & $0.047^{***}$ & $-0.041^{***}$ \\
+ & (0.003) & (0.003) & (0.004) \\
+ & [0.186] & [0.190] &  \\
+\midrule
+Observations & 97,915 & 138,052 &  \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

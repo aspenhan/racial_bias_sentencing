@@ -8,12 +8,8 @@
 # Data
 data/
 
-# Logs
+# Code logs
 logs/
 
-# Outputs
-figures/
-tables/
-
-# Papers for reference
+# Literature
 lit_review/

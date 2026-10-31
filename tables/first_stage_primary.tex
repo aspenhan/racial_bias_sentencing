@@ -1,0 +1,32 @@
+% Primary instruments. First stages: non-carceral conviction regressed on the conviction instrument
+% (loo_d1_cond_jyr_rv), without and with the dismissal instrument (loo_d0_jyr). Controls:
+% any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous,
+% any_murder, any_robbery, any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis,
+% flag_prior_fel_conv, flag_prior_mis_only_conv, female (as fixed effects); fixed effects: court
+% x year, court x calendar month, court x day of week, guidelines offense group x sentencing score
+% (one indicator per cell). Convicted cases with a matched score only. Standard errors clustered
+% by defendant. F-statistic: Wald test of the conviction instrument. The instruments built within
+% the defendant's race (loo_d1_cond_jyr_rv_race, loo_d0_jyr_race). All defendants: White and Black
+% defendants together, each with their race's instruments (one coefficient each) and every control
+% and fixed effect specific to each race, so that the coefficient on conviction leniency is a weighted
+% average of the White and Black ones (Arnold, Dobbie and Yang 2018). White and Black defendants: only
+% the cases of judges with at least 50 convicted cases with a matched score of White and 50 of Black
+% defendants in the case's 3-year window.
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{All} & \multicolumn{2}{c}{White} & \multicolumn{2}{c}{Black} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Conviction leniency & $0.459^{***}$ & $0.460^{***}$ & $0.473^{***}$ & $0.472^{***}$ & $0.443^{***}$ & $0.441^{***}$ \\
+ & (0.034) & (0.034) & (0.048) & (0.048) & (0.048) & (0.048) \\
+Dismissal leniency &  & $0.007$ &  & $0.071$ &  & $-0.058$ \\
+ &  & (0.063) &  & (0.095) &  & (0.084) \\
+\midrule
+F-statistic, conviction leniency & 183.8 & 183.5 & 99.0 & 98.6 & 84.8 & 82.9 \\
+Mean of dependent variable & 0.274 & 0.274 & 0.313 & 0.313 & 0.245 & 0.245 \\
+Observations & 80,543 & 80,543 & 33,969 & 33,969 & 46,574 & 46,574 \\
+Dismissal leniency control & No & Yes & No & Yes & No & Yes \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

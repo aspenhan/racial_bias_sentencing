@@ -1,0 +1,58 @@
+% Primary instruments. 2SLS of any new felony CC case within 1, 2 and 3 years after release from the
+% case's sentence (the first disposition plus 90% of the active carceral time, at most 4 years; the
+% first disposition if not incarcerated) on non-carceral conviction, instrumented by the conviction
+% instrument (loo_d1_cond_jyr_rv_race), controlling for the dismissal instrument (loo_d0_jyr_race),
+% built within the defendant's race. Rows: outcomes; columns: White and Black defendants and
+% White minus Black. Standard errors in parentheses; outcome mean among the column's defendants in
+% brackets. White minus Black: from one regression of White and Black defendants with all controls,
+% fixed effects, the treatment and the instrument interacted with a White indicator. Controls:
+% any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous,
+% any_murder, any_robbery, any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis,
+% flag_prior_fel_conv, flag_prior_mis_only_conv, female (as fixed effects); fixed effects: court
+% x year, court x calendar month, court x day of week, guidelines offense group x sentencing score
+% (one indicator per cell). Convicted cases with a matched score only. Standard errors clustered by
+% defendant. All outcomes on the same cases, first disposed in or before 2012 (full follow-up for
+% every window in the circuit-court record, which ends in 2019). White and Black defendants: only
+% the cases of judges with at least 50 convicted cases with a matched score of White and 50 of Black
+% defendants in the case's 3-year window.
+\begin{tabular}{lccc}
+\toprule
+ & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{4}{l}{\textit{Charged}} \\
+\quad 1 year & $0.107$ & $-0.022$ & $0.129$ \\
+ & (0.129) & (0.106) & (0.167) \\
+ & [0.104] & [0.109] &  \\
+\quad 2 years & $0.097$ & $0.059$ & $0.039$ \\
+ & (0.161) & (0.136) & (0.210) \\
+ & [0.182] & [0.197] &  \\
+\quad 3 years & $0.143$ & $0.081$ & $0.061$ \\
+ & (0.177) & (0.151) & (0.233) \\
+ & [0.242] & [0.265] &  \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Convicted}} \\
+\quad 1 year & $0.195$ & $0.031$ & $0.165$ \\
+ & (0.128) & (0.102) & (0.163) \\
+ & [0.096] & [0.098] &  \\
+\quad 2 years & $0.172$ & $0.063$ & $0.108$ \\
+ & (0.158) & (0.132) & (0.205) \\
+ & [0.168] & [0.178] &  \\
+\quad 3 years & $0.194$ & $0.065$ & $0.129$ \\
+ & (0.175) & (0.147) & (0.228) \\
+ & [0.225] & [0.241] &  \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Incarcerated}} \\
+\quad 1 year & $0.101$ & $-0.025$ & $0.126$ \\
+ & (0.110) & (0.094) & (0.144) \\
+ & [0.077] & [0.083] &  \\
+\quad 2 years & $0.135$ & $-0.011$ & $0.146$ \\
+ & (0.141) & (0.123) & (0.187) \\
+ & [0.135] & [0.152] &  \\
+\quad 3 years & $0.088$ & $-0.001$ & $0.089$ \\
+ & (0.158) & (0.139) & (0.210) \\
+ & [0.183] & [0.207] &  \\
+\midrule
+Observations & 19,594 & 29,024 &  \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

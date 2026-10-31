@@ -1,0 +1,30 @@
+% Primary analysis. White and Black defendants of the race samples, cases first disposed in or before
+% 2016: their felony revocation proceedings (charges of a case filed on one date) filed within 3 years
+% after the focal disposition, by the revocation measure that counts them and the case they are filed
+% under, and their new felony cases (judge-IV cases) charged within 3 years. N: proceedings (cases)
+% with judge information on their pleadings. Focal judge: share decided by the focal case's judge.
+% At random: share expected if the deciding judge were drawn in proportion to the judges' caseloads
+% in the court and year (all felony revocation proceedings, or all judge-IV cases), zero in another
+% court.
+\begin{tabular}{lccc}
+\toprule
+ & N & Focal judge (\%) & At random (\%) \\
+\midrule
+\multicolumn{4}{l}{\textit{Counted in the primary revocation measure (other sentences)}} \\
+\quad Revocation proceedings: later sentences & 3,050 & 16 & 11 \\
+\quad Revocation proceedings: earlier sentences, after a new case & 2,046 & 17 & 12 \\
+\quad Revocation proceedings: revocation-only case nos., after a new case & 608 & 26 & 19 \\
+\quad Revocation proceedings: all of the primary measure & 5,704 & 17 & 12 \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Counted in the secondary revocation measure (focal sentences)}} \\
+\quad Revocation proceedings: filed under the focal case & 21,872 & 64 & 21 \\
+\quad Revocation proceedings: other cases sentenced at the focal hearing & 2,153 & 58 & 22 \\
+\quad Revocation proceedings: all of the secondary measure & 24,025 & 64 & 21 \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Counted in neither revocation measure}} \\
+\quad Revocation proceedings: earlier or unidentified, no new case & 9,147 & 19 & 14 \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Not revocation proceedings}} \\
+\quad New felony cases (not revocation proceedings) & 17,680 & 14 & 11 \\
+\bottomrule
+\end{tabular}

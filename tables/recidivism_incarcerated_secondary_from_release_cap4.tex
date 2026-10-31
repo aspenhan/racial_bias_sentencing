@@ -1,0 +1,38 @@
+% Secondary instruments' sample. Share of incarcerated defendants (d2 = 1, analysis sample) with any
+% new felony CC case charged / convicted / incarcerated, any revocation proceeding / revocation of
+% the person's other felony sentences, or of the focal felony sentences (04), within 1, 2 and 3 years
+% after release from the focal sentence (first disposition plus 0.9 x active carceral time, at most
+% 4 years); all outcomes on the cases first disposed in or before 2012 (full follow-up for 3 years in
+% the circuit-court record, which ends in 2019). Stars: test that the share is zero; standard errors,
+% in parentheses, clustered by person. White and Black defendants: only the cases of judges with at
+% least 50 cases of White and 50 of Black defendants in the case's 3-year window.
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{1 year} & \multicolumn{2}{c}{2 years} & \multicolumn{2}{c}{3 years} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & White & Black & White & Black & White & Black \\
+\midrule
+\multicolumn{7}{l}{\textit{New felony CC case}} \\
+Charged & $0.086^{***}$ & $0.102^{***}$ & $0.152^{***}$ & $0.182^{***}$ & $0.204^{***}$ & $0.247^{***}$ \\
+ & (0.002) & (0.001) & (0.002) & (0.002) & (0.002) & (0.002) \\
+Convicted & $0.078^{***}$ & $0.091^{***}$ & $0.140^{***}$ & $0.163^{***}$ & $0.190^{***}$ & $0.223^{***}$ \\
+ & (0.002) & (0.001) & (0.002) & (0.002) & (0.002) & (0.002) \\
+Incarcerated & $0.064^{***}$ & $0.077^{***}$ & $0.114^{***}$ & $0.141^{***}$ & $0.158^{***}$ & $0.193^{***}$ \\
+ & (0.001) & (0.001) & (0.002) & (0.002) & (0.002) & (0.002) \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Revocation of the person's other sentences}} \\
+Proceeding & $0.024^{***}$ & $0.024^{***}$ & $0.060^{***}$ & $0.058^{***}$ & $0.094^{***}$ & $0.095^{***}$ \\
+ & (0.001) & (0.001) & (0.001) & (0.001) & (0.002) & (0.001) \\
+Revoked & $0.022^{***}$ & $0.021^{***}$ & $0.056^{***}$ & $0.052^{***}$ & $0.088^{***}$ & $0.087^{***}$ \\
+ & (0.001) & (0.001) & (0.001) & (0.001) & (0.002) & (0.001) \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Revocation of the focal sentences}} \\
+Proceeding & $0.125^{***}$ & $0.132^{***}$ & $0.213^{***}$ & $0.224^{***}$ & $0.262^{***}$ & $0.279^{***}$ \\
+ & (0.002) & (0.001) & (0.002) & (0.002) & (0.002) & (0.002) \\
+Revoked & $0.109^{***}$ & $0.117^{***}$ & $0.187^{***}$ & $0.201^{***}$ & $0.231^{***}$ & $0.250^{***}$ \\
+ & (0.002) & (0.001) & (0.002) & (0.002) & (0.002) & (0.002) \\
+\midrule
+Incarcerated defendants (cases) & 36,080 & 58,721 & 36,080 & 58,721 & 36,080 & 58,721 \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

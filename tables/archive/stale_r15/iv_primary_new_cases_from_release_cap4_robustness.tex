@@ -1,0 +1,63 @@
+% Primary instruments. 2SLS of any new felony CC case within 1, 2 and 3 years after release from the
+% case's sentence (the first disposition plus 90% of the active carceral time, at most 4 years; the
+% first disposition if not incarcerated) on non-carceral conviction, instrumented by the conviction
+% instrument (loo_d1_cond_jyr_rv_race), controlling for the dismissal instrument (loo_d0_jyr_race),
+% built within the defendant's race. Rows: outcomes; columns: White and Black defendants and
+% White minus Black. Standard errors in parentheses; outcome mean among the column's defendants in
+% brackets. White minus Black: from one regression of White and Black defendants with all controls,
+% fixed effects, the treatment and the instrument interacted with a White indicator. Controls:
+% any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping, any_larceny, any_miscellaneous,
+% any_murder, any_robbery, any_sex_assault, any_sex_offense, any_traffic, any_weapon, any_mis,
+% flag_prior_fel_conv, flag_prior_mis_only_conv, female; fixed effects: court x year, court x calendar
+% month, court x day of week, sentencing score (one indicator per value). Convicted cases with a
+% matched score only. Standard errors clustered by defendant. All outcomes on the same cases, first
+% disposed in or before 2012 (full follow-up for every window in the circuit-court record, which ends
+% in 2019). White and Black defendants: only the cases of judges with at least 50 convicted cases
+% with a matched score of White and 50 of Black defendants in the case's 3-year window. Columns:
+% the primary analysis with UJIVE instruments (loo_d1_cond_jyr_rv_race_ujive, loo_d0_jyr_race_ujive:
+% residualized on the controls and fixed effects, the defendant left out of the residualization), and
+% with one fixed effect per most serious offense type x sentencing score cell instead of the score
+% fixed effects (JIVE instruments).
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{UJIVE} & \multicolumn{3}{c}{Offense x score cells} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & White & Black & White $-$ Black & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{7}{l}{\textit{Charged}} \\
+\quad 1 year & $0.093$ & $-0.026$ & $0.119$ & $0.005$ & $0.006$ & $-0.001$ \\
+ & (0.095) & (0.087) & (0.129) & (0.142) & (0.125) & (0.189) \\
+ & [0.104] & [0.110] &  & [0.104] & [0.110] &  \\
+\quad 2 years & $0.079$ & $0.020$ & $0.058$ & $-0.049$ & $0.103$ & $-0.152$ \\
+ & (0.118) & (0.112) & (0.163) & (0.177) & (0.160) & (0.238) \\
+ & [0.182] & [0.197] &  & [0.182] & [0.197] &  \\
+\quad 3 years & $0.115$ & $0.035$ & $0.080$ & $-0.042$ & $0.115$ & $-0.156$ \\
+ & (0.131) & (0.124) & (0.180) & (0.195) & (0.177) & (0.263) \\
+ & [0.242] & [0.265] &  & [0.242] & [0.265] &  \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Convicted}} \\
+\quad 1 year & $0.160^{*}$ & $0.015$ & $0.144$ & $0.126$ & $0.069$ & $0.057$ \\
+ & (0.093) & (0.083) & (0.125) & (0.139) & (0.120) & (0.183) \\
+ & [0.096] & [0.098] &  & [0.096] & [0.098] &  \\
+\quad 2 years & $0.135$ & $0.028$ & $0.107$ & $0.049$ & $0.124$ & $-0.075$ \\
+ & (0.116) & (0.108) & (0.158) & (0.171) & (0.155) & (0.231) \\
+ & [0.168] & [0.178] &  & [0.168] & [0.178] &  \\
+\quad 3 years & $0.157$ & $0.016$ & $0.141$ & $0.042$ & $0.085$ & $-0.043$ \\
+ & (0.129) & (0.121) & (0.176) & (0.191) & (0.172) & (0.257) \\
+ & [0.225] & [0.241] &  & [0.225] & [0.241] &  \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Incarcerated}} \\
+\quad 1 year & $0.079$ & $-0.035$ & $0.114$ & $0.026$ & $0.002$ & $0.024$ \\
+ & (0.080) & (0.077) & (0.111) & (0.121) & (0.110) & (0.163) \\
+ & [0.077] & [0.083] &  & [0.077] & [0.083] &  \\
+\quad 2 years & $0.088$ & $-0.031$ & $0.119$ & $0.031$ & $0.037$ & $-0.007$ \\
+ & (0.104) & (0.101) & (0.144) & (0.154) & (0.144) & (0.211) \\
+ & [0.135] & [0.152] &  & [0.135] & [0.152] &  \\
+\quad 3 years & $0.049$ & $-0.039$ & $0.088$ & $-0.030$ & $0.019$ & $-0.050$ \\
+ & (0.116) & (0.114) & (0.163) & (0.175) & (0.162) & (0.238) \\
+ & [0.183] & [0.207] &  & [0.183] & [0.207] &  \\
+\midrule
+Observations & 19,588 & 29,027 &  & 19,588 & 29,027 &  \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

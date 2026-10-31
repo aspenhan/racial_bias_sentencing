@@ -1,0 +1,59 @@
+% Secondary instruments. 2SLS of any new felony CC case within 1, 2 and 3 years after the case's first
+% disposition on non-carceral conviction, instrumented by the conviction instrument (loo_d1_jyr_race),
+% controlling for the dismissal instrument (loo_d0_jyr_race), built within the defendant's race.
+% Rows: outcomes; columns: White and Black defendants and White minus Black. Standard errors in
+% parentheses; outcome mean among the column's defendants in brackets. White minus Black: from one
+% regression of White and Black defendants with all controls, fixed effects, the treatment and the
+% instrument interacted with a White indicator. Controls: any_assault, any_burglary, any_drugs,
+% any_fraud, any_kidnapping, any_larceny, any_miscellaneous, any_murder, any_robbery, any_sex_assault,
+% any_sex_offense, any_traffic, any_weapon, any_mis, flag_prior_fel_conv, flag_prior_mis_only_conv,
+% female (as fixed effects); fixed effects: court x year, court x calendar month, court x day of
+% week. Standard errors clustered by defendant. All outcomes on the same cases, first disposed in
+% or before 2016 (full follow-up for every window in the circuit-court record, which ends in 2019).
+% White and Black defendants: only the cases of judges with at least 50 cases of White and 50 of Black
+% defendants in the case's 3-year window. Columns 'Predicted score': the instruments (loo_d1_jyr_pred,
+% loo_d0_jyr_pred; by race loo_d1_jyr_pred_race, loo_d0_jyr_pred_race) built, and the regressions
+% estimated, also with one indicator per rounded value of the predicted sentencing score (05).
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{No score} & \multicolumn{3}{c}{Predicted score} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & White & Black & White $-$ Black & White & Black & White $-$ Black \\
+\midrule
+\multicolumn{7}{l}{\textit{Charged}} \\
+\quad 1 year & $-0.038$ & $0.210^{***}$ & $-0.249^{***}$ & $-0.036$ & $0.208^{***}$ & $-0.243^{***}$ \\
+ & (0.051) & (0.057) & (0.076) & (0.050) & (0.054) & (0.074) \\
+ & [0.071] & [0.078] &  & [0.071] & [0.078] &  \\
+\quad 2 years & $-0.039$ & $0.247^{***}$ & $-0.286^{***}$ & $-0.026$ & $0.244^{***}$ & $-0.271^{***}$ \\
+ & (0.066) & (0.074) & (0.100) & (0.065) & (0.071) & (0.096) \\
+ & [0.132] & [0.149] &  & [0.132] & [0.149] &  \\
+\quad 3 years & $-0.051$ & $0.228^{***}$ & $-0.279^{**}$ & $-0.033$ & $0.234^{***}$ & $-0.267^{**}$ \\
+ & (0.076) & (0.084) & (0.113) & (0.074) & (0.081) & (0.109) \\
+ & [0.179] & [0.207] &  & [0.179] & [0.207] &  \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Convicted}} \\
+\quad 1 year & $-0.008$ & $0.200^{***}$ & $-0.208^{***}$ & $-0.005$ & $0.197^{***}$ & $-0.203^{***}$ \\
+ & (0.049) & (0.054) & (0.072) & (0.048) & (0.051) & (0.070) \\
+ & [0.064] & [0.068] &  & [0.064] & [0.068] &  \\
+\quad 2 years & $0.004$ & $0.257^{***}$ & $-0.253^{***}$ & $0.018$ & $0.253^{***}$ & $-0.235^{**}$ \\
+ & (0.064) & (0.071) & (0.095) & (0.062) & (0.068) & (0.092) \\
+ & [0.120] & [0.131] &  & [0.120] & [0.131] &  \\
+\quad 3 years & $-0.009$ & $0.251^{***}$ & $-0.260^{**}$ & $0.012$ & $0.258^{***}$ & $-0.247^{**}$ \\
+ & (0.073) & (0.081) & (0.109) & (0.071) & (0.078) & (0.105) \\
+ & [0.164] & [0.184] &  & [0.164] & [0.184] &  \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Incarcerated}} \\
+\quad 1 year & $-0.036$ & $0.198^{***}$ & $-0.234^{***}$ & $-0.031$ & $0.187^{***}$ & $-0.219^{***}$ \\
+ & (0.041) & (0.049) & (0.064) & (0.040) & (0.046) & (0.062) \\
+ & [0.049] & [0.056] &  & [0.049] & [0.056] &  \\
+\quad 2 years & $-0.038$ & $0.247^{***}$ & $-0.285^{***}$ & $-0.021$ & $0.234^{***}$ & $-0.254^{***}$ \\
+ & (0.056) & (0.066) & (0.086) & (0.054) & (0.063) & (0.083) \\
+ & [0.093] & [0.110] &  & [0.093] & [0.110] &  \\
+\quad 3 years & $-0.039$ & $0.229^{***}$ & $-0.268^{***}$ & $-0.020$ & $0.229^{***}$ & $-0.249^{***}$ \\
+ & (0.065) & (0.075) & (0.100) & (0.063) & (0.072) & (0.096) \\
+ & [0.129] & [0.154] &  & [0.129] & [0.154] &  \\
+\midrule
+Observations & 97,915 & 138,052 &  & 97,915 & 138,052 &  \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

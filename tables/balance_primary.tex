@@ -1,0 +1,60 @@
+% Primary instruments. Balance: non-carceral conviction (Conviction) and the conviction instrument
+% (loo_d1_cond_jyr_rv_race; Leniency) regressed on the covariates, with fixed effects: court x year,
+% court x calendar month, court x day of week, guidelines offense group x sentencing score (one
+% indicator per cell). All defendants: White and Black defendants, the fixed effects specific to each
+% race. Any misdemeanor charge: in the case. Prior convictions between 31 days and 5 years before
+% the case's first offense: felony, a convicted felony case in the full circuit-court record or a
+% Sentencing Commission sentencing event of the defendant; misdemeanor only, a convicted misdemeanor
+% circuit-court case and no felony conviction. Convicted cases with a matched score only. Standard
+% errors clustered by defendant; joint F-test of all covariates. White and Black defendants: only
+% the cases of judges with at least 50 convicted cases with a matched score of White and 50 of Black
+% defendants in the case's 3-year window.
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{All} & \multicolumn{2}{c}{White} & \multicolumn{2}{c}{Black} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & Conviction & Leniency & Conviction & Leniency & Conviction & Leniency \\
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Female & $0.0382^{***}$ & $0.0003$ & $0.0333^{***}$ & $0.0007$ & $0.0433^{***}$ & $-0.0001$ \\
+ & (0.0038) & (0.0004) & (0.0055) & (0.0006) & (0.0053) & (0.0005) \\
+Prior felony conviction (5 years) & $-0.0178^{***}$ & $-0.0004$ & $-0.0140^{***}$ & $-0.0004$ & $-0.0205^{***}$ & $-0.0004$ \\
+ & (0.0032) & (0.0004) & (0.0054) & (0.0007) & (0.0039) & (0.0004) \\
+Prior misdemeanor only conviction (5 years) & $-0.0185^{***}$ & $-0.0002$ & $0.0000$ & $-0.0006$ & $-0.0334^{***}$ & $0.0002$ \\
+ & (0.0066) & (0.0008) & (0.0103) & (0.0013) & (0.0085) & (0.0009) \\
+Offense: assault & $-0.0859^{***}$ & $0.0015$ & $-0.0843^{***}$ & $0.0015$ & $-0.0875^{***}$ & $0.0015$ \\
+ & (0.0082) & (0.0009) & (0.0160) & (0.0021) & (0.0096) & (0.0010) \\
+Offense: burglary & $-0.0528^{***}$ & $0.0012$ & $-0.0795^{***}$ & $0.0029^{*}$ & $-0.0322^{***}$ & $0.0000$ \\
+ & (0.0085) & (0.0009) & (0.0138) & (0.0016) & (0.0107) & (0.0011) \\
+Offense: drugs & $-0.0447^{***}$ & $-0.0009$ & $-0.0256^{*}$ & $-0.0013$ & $-0.0621^{***}$ & $-0.0006$ \\
+ & (0.0088) & (0.0009) & (0.0136) & (0.0015) & (0.0113) & (0.0010) \\
+Offense: fraud & $-0.0038$ & $-0.0002$ & $-0.0131$ & $-0.0001$ & $0.0055$ & $-0.0002$ \\
+ & (0.0084) & (0.0008) & (0.0119) & (0.0012) & (0.0119) & (0.0011) \\
+Offense: kidnapping & $-0.0269^{**}$ & $0.0002$ & $-0.0128$ & $0.0046$ & $-0.0331^{***}$ & $-0.0013$ \\
+ & (0.0107) & (0.0017) & (0.0224) & (0.0034) & (0.0119) & (0.0019) \\
+Offense: larceny & $-0.0527^{***}$ & $-0.0004$ & $-0.0599^{***}$ & $-0.0005$ & $-0.0467^{***}$ & $-0.0003$ \\
+ & (0.0065) & (0.0007) & (0.0103) & (0.0011) & (0.0084) & (0.0008) \\
+Offense: miscellaneous & $-0.0066$ & $-0.0008$ & $-0.0205$ & $-0.0007$ & $0.0066$ & $-0.0009$ \\
+ & (0.0111) & (0.0012) & (0.0169) & (0.0020) & (0.0147) & (0.0015) \\
+Offense: murder & $-0.0195$ & $0.0017$ & $-0.0224$ & $0.0081$ & $-0.0196$ & $0.0003$ \\
+ & (0.0240) & (0.0030) & (0.0346) & (0.0070) & (0.0283) & (0.0033) \\
+Offense: robbery & $-0.0944^{***}$ & $-0.0019$ & $-0.1565^{***}$ & $0.0002$ & $-0.0717^{***}$ & $-0.0026^{*}$ \\
+ & (0.0124) & (0.0013) & (0.0241) & (0.0029) & (0.0143) & (0.0014) \\
+Offense: sex assault & $-0.0445^{**}$ & $0.0014$ & $-0.0799^{***}$ & $0.0037$ & $0.0061$ & $-0.0024$ \\
+ & (0.0220) & (0.0026) & (0.0295) & (0.0036) & (0.0317) & (0.0035) \\
+Offense: sex offense & $-0.0131$ & $-0.0018$ & $-0.0407$ & $-0.0009$ & $0.0256$ & $-0.0027$ \\
+ & (0.0218) & (0.0028) & (0.0282) & (0.0037) & (0.0345) & (0.0041) \\
+Offense: traffic & $-0.0779^{***}$ & $0.0008$ & $-0.1053^{***}$ & $0.0040^{*}$ & $-0.0632^{***}$ & $-0.0009$ \\
+ & (0.0092) & (0.0011) & (0.0160) & (0.0021) & (0.0112) & (0.0012) \\
+Offense: weapon & $-0.0597^{***}$ & $-0.0009$ & $-0.0575^{***}$ & $-0.0005$ & $-0.0599^{***}$ & $-0.0011$ \\
+ & (0.0066) & (0.0008) & (0.0151) & (0.0019) & (0.0073) & (0.0009) \\
+Any misdemeanor charge & $-0.0003$ & $0.0002$ & $-0.0063$ & $0.0004$ & $0.0043$ & $0.0001$ \\
+ & (0.0047) & (0.0005) & (0.0074) & (0.0009) & (0.0060) & (0.0006) \\
+\midrule
+Joint F-statistic & 36.71 & 0.76 & 15.28 & 0.91 & 24.10 & 0.60 \\
+Joint F-test p-value & 0.000 & 0.742 & 0.000 & 0.566 & 0.000 & 0.892 \\
+Mean of dependent variable & 0.2736 & $-$0.0011 & 0.3131 & $-$0.0010 & 0.2448 & $-$0.0012 \\
+Observations & 80,543 & 80,543 & 33,969 & 33,969 & 46,574 & 46,574 \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

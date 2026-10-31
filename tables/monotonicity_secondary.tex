@@ -1,0 +1,42 @@
+% Secondary instruments. Split-sample monotonicity: for each split, the conviction instrument is
+% built from one group only and the first stage of non-carceral conviction on it is estimated on
+% the other group, controlling for the dismissal instrument built from the same group; coefficient
+% on the conviction instrument and (standard error). Controls and fixed effects as in the first
+% stages, without the controls constant within the group; standard errors clustered by defendant.
+% The conviction instrument is built from the cases of the defendant's race (as in the analysis),
+% restricted to the group; the dismissal instrument from all cases of the race. All defendants (White
+% and Black): the race split builds the instruments from one race's cases and estimates the first
+% stage on the other race; the other splits build each race's instruments from that race's cases of
+% the group and estimate the first stage on both races, every control and fixed effect specific to
+% each race and one coefficient on each instrument, so the coefficient is a weighted average of the
+% White and Black ones. Columns 'Predicted score': the instruments (loo_d1_jyr_pred, loo_d0_jyr_pred;
+% by race loo_d1_jyr_pred_race, loo_d0_jyr_pred_race) built, and the regressions estimated, also with
+% one indicator per rounded value of the predicted sentencing score (05). White and Black defendants:
+% only the cases of judges with at least 50 cases of White and 50 of Black defendants in the case's
+% 3-year window.
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{All} & \multicolumn{2}{c}{White} & \multicolumn{2}{c}{Black} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Instrument built from $\rightarrow$ first stage on & No score & Predicted score & No score & Predicted score & No score & Predicted score \\
+\midrule
+\multicolumn{7}{l}{\textit{Race}} \\
+White $\rightarrow$ Black & $0.392^{***}$ & $0.406^{***}$ &  &  &  &  \\
+ & (0.027) & (0.026) &  &  &  &  \\
+Black $\rightarrow$ White & $0.680^{***}$ & $0.732^{***}$ &  &  &  &  \\
+ & (0.045) & (0.045) &  &  &  &  \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Sex}} \\
+Male $\rightarrow$ Female & $0.649^{***}$ & $0.654^{***}$ & $0.672^{***}$ & $0.671^{***}$ & $0.633^{***}$ & $0.646^{***}$ \\
+ & (0.060) & (0.059) & (0.077) & (0.076) & (0.094) & (0.093) \\
+Female $\rightarrow$ Male & $0.222^{***}$ & $0.221^{***}$ & $0.246^{***}$ & $0.243^{***}$ & $0.204^{***}$ & $0.205^{***}$ \\
+ & (0.017) & (0.017) & (0.027) & (0.027) & (0.022) & (0.022) \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Prior felony conviction (5 years)}} \\
+No prior felony $\rightarrow$ Prior felony & $0.537^{***}$ & $0.579^{***}$ & $0.547^{***}$ & $0.583^{***}$ & $0.532^{***}$ & $0.579^{***}$ \\
+ & (0.046) & (0.046) & (0.071) & (0.071) & (0.059) & (0.059) \\
+Prior felony $\rightarrow$ No prior felony & $0.220^{***}$ & $0.227^{***}$ & $0.176^{***}$ & $0.186^{***}$ & $0.283^{***}$ & $0.286^{***}$ \\
+ & (0.021) & (0.020) & (0.027) & (0.027) & (0.032) & (0.031) \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

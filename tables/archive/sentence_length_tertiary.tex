@@ -1,0 +1,41 @@
+% Tertiary instruments. Length of the carceral sentence (active time; the case's sentences consecutive
+% unless the court made them concurrent; life, death and sentences above the 99th percentile of the
+% incarcerated, 28.9 years, set to it) regressed on the conviction instrument (loo_d1_jyr_pred /
+% loo_d1_jyr_pred_race), with the fixed effects of the instrument construction (court x year, court x
+% calendar month, court x day of week, predicted sentencing score (one indicator per rounded value));
+% construction controls: any_assault, any_burglary, any_drugs, any_fraud, any_kidnapping, any_larceny,
+% any_miscellaneous, any_murder, any_robbery, any_sex_assault, any_sex_offense, any_traffic,
+% any_weapon, any_mis, flag_prior_fel_conv, flag_prior_mis_only_conv, female and, all defendants
+% only, black; dismissal leniency: the dismissal instrument (loo_d0_jyr_pred / loo_d0_jyr_pred_race).
+% All cases (0 if not incarcerated) and the incarcerated only. Standard errors two-way clustered by
+% defendant and judge x year. White and Black defendants: only the cases of judges with at least 50
+% cases of White and 50 of Black defendants in the case's 3-year window.
+\begin{tabular}{lccccccccc}
+\toprule
+ & \multicolumn{3}{c}{All} & \multicolumn{3}{c}{White} & \multicolumn{3}{c}{Black} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) \\
+\midrule
+\multicolumn{10}{l}{\textit{Sentence length (years), all cases (0 if not incarcerated)}} \\
+\quad Conviction leniency & $-1.344^{***}$ & $-1.021^{***}$ & $-1.217^{***}$ & $-0.814^{***}$ & $-0.820^{***}$ & $-0.964^{***}$ & $-1.303^{***}$ & $-0.884^{***}$ & $-0.970^{***}$ \\
+ & (0.195) & (0.176) & (0.176) & (0.206) & (0.176) & (0.185) & (0.282) & (0.257) & (0.264) \\
+\quad Mean of dependent variable & 1.106 & 1.106 & 1.106 & 0.816 & 0.816 & 0.816 & 1.312 & 1.312 & 1.312 \\
+\quad Observations & 284,447 & 284,447 & 284,447 & 110,131 & 110,131 & 110,131 & 153,554 & 153,554 & 153,554 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Sentence length (years), incarcerated}} \\
+\quad Conviction leniency & $-0.686^{**}$ & $-0.534^{*}$ & $-0.457$ & $-0.278$ & $-0.570^{*}$ & $-0.517$ & $-0.712$ & $-0.304$ & $-0.141$ \\
+ & (0.342) & (0.290) & (0.299) & (0.397) & (0.319) & (0.347) & (0.468) & (0.391) & (0.407) \\
+\quad Mean of dependent variable & 2.010 & 2.010 & 2.010 & 1.567 & 1.567 & 1.567 & 2.287 & 2.287 & 2.287 \\
+\quad Observations & 156,452 & 156,452 & 156,452 & 57,319 & 57,319 & 57,319 & 88,059 & 88,059 & 88,059 \\
+\addlinespace
+\multicolumn{10}{l}{\textit{Log sentence length (days), incarcerated}} \\
+\quad Conviction leniency & $-0.136$ & $-0.146$ & $-0.171$ & $-0.045$ & $-0.109$ & $-0.113$ & $-0.222$ & $-0.204$ & $-0.196$ \\
+ & (0.123) & (0.117) & (0.124) & (0.142) & (0.130) & (0.137) & (0.154) & (0.144) & (0.155) \\
+\quad Mean of dependent variable & 5.602 & 5.602 & 5.602 & 5.353 & 5.353 & 5.353 & 5.750 & 5.750 & 5.750 \\
+\quad Observations & 156,452 & 156,452 & 156,452 & 57,319 & 57,319 & 57,319 & 88,059 & 88,059 & 88,059 \\
+\midrule
+Construction controls & No & Yes & Yes & No & Yes & Yes & No & Yes & Yes \\
+Dismissal leniency & No & No & Yes & No & No & Yes & No & No & Yes \\
+\bottomrule
+\multicolumn{10}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

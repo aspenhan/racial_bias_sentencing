@@ -1,0 +1,56 @@
+% Non-carceral conviction (2SLS) on any future felony charge in year 1, years 2-4, years 5-7 and
+% years 1-7 after the case's first disposition, instrumented by conviction leniency, controlling for
+% incarceration leniency: from our estimates (1) to Table E.7 of the Revolving Door paper (11), as its
+% replication package makes it, each row changing one element of the row above; coefficient, (standard
+% error), {observations}. (1): instruments built within the defendant's race; controls: offense type,
+% any misdemeanor charge, prior felony conviction (circuit-court record or Sentencing Commission)
+% and prior misdemeanor-only conviction between 31 days and 5 years before, female; fixed effects:
+% court x year, court x calendar month, court x day of week; standard errors clustered by defendant;
+% only the cases of judges with at least 50 cases of White and 50 of Black defendants in the case's
+% 3-year window, as the analysis with instruments by race; (2) all judges. All rows on the cases first
+% disposed in or before 2012 (full follow-up for every window). Paper's cases: ours matched one-to-one
+% to the paper's (hashed case ids -> original case groups -> their charges -> our cases); (11): the
+% paper's own data, which also adds its cases not matched to ours, its controls, FE cells, clusters
+% and years, and each race group's 6th case counted twice, as the replication code does.
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{4}{c}{White (non-Black from (10))} & \multicolumn{4}{c}{Black} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+ & Year 1 & Years 2--4 & Years 5--7 & Years 1--7 & Year 1 & Years 2--4 & Years 5--7 & Years 1--7 \\
+\midrule
+(1) Our estimates & $0.078$ & $-0.011$ & $-0.043$ & $-0.008$ & $0.176^{**}$ & $0.090$ & $0.158$ & $0.326^{**}$ \\
+ & (0.085) & (0.125) & (0.118) & (0.151) & (0.087) & (0.129) & (0.123) & (0.157) \\
+ & \{71,455\} & \{71,455\} & \{71,455\} & \{71,455\} & \{103,472\} & \{103,472\} & \{103,472\} & \{103,472\} \\
+(2) All judges & $0.099$ & $0.063$ & $-0.041$ & $0.097$ & $0.159^{*}$ & $0.139$ & $0.163$ & $0.372^{**}$ \\
+ & (0.079) & (0.115) & (0.110) & (0.139) & (0.087) & (0.131) & (0.124) & (0.160) \\
+ & \{77,022\} & \{77,022\} & \{77,022\} & \{77,022\} & \{107,027\} & \{107,027\} & \{107,027\} & \{107,027\} \\
+(3) Same prior conviction controls & $0.105$ & $0.084$ & $-0.024$ & $0.132$ & $0.157^{*}$ & $0.130$ & $0.154$ & $0.356^{**}$ \\
+ & (0.081) & (0.118) & (0.112) & (0.143) & (0.086) & (0.130) & (0.123) & (0.159) \\
+ & \{77,022\} & \{77,022\} & \{77,022\} & \{77,022\} & \{107,027\} & \{107,027\} & \{107,027\} & \{107,027\} \\
+(4) Day-of-week FE & $0.113$ & $0.118$ & $-0.013$ & $0.174$ & $0.141^{*}$ & $0.118$ & $0.121$ & $0.315^{**}$ \\
+ & (0.082) & (0.120) & (0.114) & (0.146) & (0.083) & (0.126) & (0.118) & (0.152) \\
+ & \{77,022\} & \{77,022\} & \{77,022\} & \{77,022\} & \{107,027\} & \{107,027\} & \{107,027\} & \{107,027\} \\
+(5) Clustered by judge $\times$ year only & $0.113$ & $0.118$ & $-0.013$ & $0.174$ & $0.141^{*}$ & $0.118$ & $0.121$ & $0.315^{*}$ \\
+ & (0.071) & (0.111) & (0.109) & (0.136) & (0.078) & (0.128) & (0.122) & (0.164) \\
+ & \{77,022\} & \{77,022\} & \{77,022\} & \{77,022\} & \{107,027\} & \{107,027\} & \{107,027\} & \{107,027\} \\
+(6) Pooled instruments & $0.129^{**}$ & $0.176^{*}$ & $0.035$ & $0.280^{**}$ & $0.091$ & $0.025$ & $0.088$ & $0.165$ \\
+ & (0.062) & (0.096) & (0.094) & (0.114) & (0.060) & (0.095) & (0.092) & (0.121) \\
+ & \{77,022\} & \{77,022\} & \{77,022\} & \{77,022\} & \{107,027\} & \{107,027\} & \{107,027\} & \{107,027\} \\
+(7) Unresidualized instruments & $0.080$ & $0.120$ & $0.011$ & $0.179$ & $0.108^{*}$ & $0.021$ & $0.112$ & $0.182$ \\
+ & (0.061) & (0.093) & (0.091) & (0.111) & (0.063) & (0.098) & (0.094) & (0.126) \\
+ & \{77,022\} & \{77,022\} & \{77,022\} & \{77,022\} & \{107,027\} & \{107,027\} & \{107,027\} & \{107,027\} \\
+(8) Paper's cases & $0.084$ & $0.126$ & $-0.003$ & $0.182$ & $0.126^{*}$ & $0.024$ & $0.126$ & $0.225^{*}$ \\
+ & (0.061) & (0.095) & (0.092) & (0.114) & (0.068) & (0.107) & (0.101) & (0.137) \\
+ & \{74,819\} & \{74,819\} & \{74,819\} & \{74,819\} & \{103,950\} & \{103,950\} & \{103,950\} & \{103,950\} \\
+(9) Paper's outcome, treatment and instruments & $0.119^{*}$ & $0.126$ & $0.050$ & $0.268^{**}$ & $0.092$ & $0.065$ & $0.101$ & $0.217$ \\
+ & (0.066) & (0.098) & (0.101) & (0.124) & (0.068) & (0.114) & (0.106) & (0.142) \\
+ & \{74,819\} & \{74,819\} & \{74,819\} & \{74,819\} & \{103,950\} & \{103,950\} & \{103,950\} & \{103,950\} \\
+(10) Paper's race indicator & $0.104^{*}$ & $0.106$ & $0.038$ & $0.230^{**}$ & $0.097$ & $0.076$ & $0.108$ & $0.237$ \\
+ & (0.062) & (0.089) & (0.093) & (0.113) & (0.068) & (0.114) & (0.107) & (0.145) \\
+ & \{78,941\} & \{78,941\} & \{78,941\} & \{78,941\} & \{103,780\} & \{103,780\} & \{103,780\} & \{103,780\} \\
+(11) Paper's controls, FE, clusters and misc. & $0.101$ & $0.114$ & $0.041$ & $0.237^{**}$ & $0.100$ & $0.076$ & $0.116$ & $0.244^{*}$ \\
+ & (0.063) & (0.090) & (0.094) & (0.114) & (0.069) & (0.117) & (0.110) & (0.148) \\
+ & \{79,158\} & \{79,158\} & \{79,158\} & \{79,158\} & \{104,225\} & \{104,225\} & \{104,225\} & \{104,225\} \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize $^{*}$ p $<$ 0.1, $^{**}$ p $<$ 0.05, $^{***}$ p $<$ 0.01} \\
+\end{tabular}

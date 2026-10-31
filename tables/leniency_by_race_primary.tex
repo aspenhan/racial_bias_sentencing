@@ -1,0 +1,36 @@
+% Primary analysis. Leniency of a judge toward a race: mean residualized non-carceral sentence
+% (the first-step residual of the race-specific instrument) over the judge's convicted cases with a
+% matched score of that race in the race samples, per judge x court over the 3-year window centered
+% on each year with cases (the cases the instrument averages), relative to the other judges of the
+% same court and center year, the comparisons the instrument makes: minus the group's mean weighted
+% by the smaller of the two case counts, judge-windows without another judge in their group dropped.
+% Correlation weighted by the smaller of the two case counts. Reliability: Spearman-Brown from random
+% halves of the judge's defendants, each residualized in its own regression (20 splits); corrected
+% correlation: correlation between a White and a Black half over the square root of the product of
+% the correlations between the two halves of each race (the halves' leniency relative to the group
+% likewise); in brackets, its 95% interval from 1000 bootstrap draws of judges (the splits' half means
+% kept). Rank regression: percentile rank (across judge-windows) in White leniency on percentile rank
+% in Black leniency, unweighted. Pairs: judges in the same court and window year; same ordering: share
+% of pairs ranked the same way.
+\begin{tabular}{lc}
+\toprule
+ & Judge $\times$ 3-year window \\
+\midrule
+Units & 756 \\
+Median cases per unit, White & 110 \\
+Median cases per unit, Black & 150 \\
+\addlinespace
+Correlation of White and Black leniency & 0.61 \\
+Reliability of White leniency & 0.60 \\
+Reliability of Black leniency & 0.59 \\
+Correlation corrected for sampling error & 1.03 \\
+ & [0.91, 1.15] \\
+Rank regression, White on Black & 0.512 \\
+ & (0.031) \\
+\addlinespace
+Pairs of judges compared & 1,403 \\
+Same ordering by White and Black leniency & 0.69 \\
+Same ordering in random halves: White vs Black & 0.63 \\
+Same ordering in random halves: same race & 0.62 \\
+\bottomrule
+\end{tabular}
